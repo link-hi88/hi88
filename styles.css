@@ -1,0 +1,190 @@
+
+/* Reset & base */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.6;
+  color: #0f172a; /* slate-900 */
+  background: #f8fafc; /* slate-50 */
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Header */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(180%) blur(6px);
+  background: rgba(255,255,255,0.7);
+  border-bottom: 1px solid #e2e8f0;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 20px;
+}
+.logo-badge {
+  width: 36px; height: 36px; border-radius: 12px;
+  background: linear-gradient(135deg, #0ea5e9, #22c55e);
+  display: grid; place-items: center;
+  color: #fff; font-weight: 800;
+}
+.nav-actions { display: flex; gap: 10px; }
+
+/* Buttons */
+.btn {
+  appearance: none;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .05s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  background: linear-gradient(135deg, #16a34a, #0ea5e9);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(14,165,233,.25);
+}
+.btn-primary:hover { box-shadow: 0 10px 24px rgba(14,165,233,.35); }
+
+.btn-outline {
+  background: #fff;
+  color: #0ea5e9;
+  border: 2px solid #0ea5e9;
+}
+.btn-outline:hover {
+  background: #0ea5e9;
+  color: #fff;
+}
+
+/* Hero Slider */
+.hero {
+  position: relative;
+  width: 100%;
+  height: min(70vh, 700px);
+  overflow: hidden;
+  border-radius: 0 0 24px 24px;
+  background: #0ea5e9;
+}
+.slider {
+  position: relative; height: 100%;
+}
+.slide {
+  position: absolute; inset: 0;
+  opacity: 0; transition: opacity .7s ease;
+}
+.slide.active { opacity: 1; }
+.slide img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Hero Overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(2,6,23,0.55), rgba(2,6,23,0.15) 40%, rgba(2,6,23,0.65));
+  display: grid;
+  align-content: end;
+}
+.hero-content {
+  padding: 48px 0 36px;
+  color: #fff;
+}
+.hero-title {
+  font-size: clamp(24px, 4vw, 40px);
+  font-weight: 800;
+  text-align: center;
+  margin: 0 0 16px;
+}
+.hero-cta {
+  display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+}
+
+/* Rainbow heading */
+.rainbow-text {
+  background: linear-gradient(90deg, #22c55e, #0ea5e9, #a78bfa, #f59e0b, #ef4444);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
+}
+
+/* Section */
+.section {
+  padding: 48px 0;
+}
+.section-title {
+  text-align: center;
+  font-size: clamp(20px, 3vw, 28px);
+  margin: 0 0 24px;
+}
+
+/* Posts grid */
+.posts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+@media (max-width: 900px) {
+  .posts { grid-template-columns: 1fr; }
+}
+.card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(2,6,23,0.04);
+  transition: transform .15s ease, box-shadow .2s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(2,6,23,0.08);
+}
+.card-img {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  object-fit: cover;
+}
+.card-body { padding: 14px; }
+.card-title {
+  margin: 0 0 6px;
+  font-weight: 800;
+  font-size: 18px;
+}
+.card-meta {
+  color: #64748b;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+.card-text { margin: 0; font-size: 15px; color: #334155; }
+
+/* Footer */
+.footer {
+  padding: 28px 0 48px;
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+}
