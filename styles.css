@@ -123,13 +123,10 @@ body {
   display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
 }
 
-/* Rainbow heading */
 .rainbow-text {
-  background: linear-gradient(90deg, #22c55e, #0ea5e9, #a78bfa, #f59e0b, #ef4444);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #ffffff;              /* chữ trắng */
   font-weight: 800;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6); /* thêm bóng để nổi bật */
 }
 
 /* Section */
